@@ -273,33 +273,48 @@
 
 #merging two sorted lists  
 
-def merge_sort(arr):
-    if len(arr) <=1:
-        return arr
+# def merge_sort(arr):
+#     if len(arr) <=1:
+#         return arr
     
-    mid = len(arr)//2
+#     mid = len(arr)//2
 
-    l=merge_sort(arr[:mid])
-    r=merge_sort(arr[mid:])
+#     l=merge_sort(arr[:mid])
+#     r=merge_sort(arr[mid:])
 
-    return merge(l,r)
+#     return merge(l,r)
 
-def merge(l,r):
-    result = []
-    i=j=0
+# def merge(l,r):
+#     result = []
+#     i=j=0
 
-    while i<len(l) and j<len(r):
-        if l[i]<r[j]:
-            result.append(l[i])
-            i += 1
-        else:
-            result.append(r[j])
-            j += 1
+#     while i<len(l) and j<len(r):
+#         if l[i]<r[j]:
+#             result.append(l[i])
+#             i += 1
+#         else:
+#             result.append(r[j])
+#             j += 1
 
-    result.extend(l[i:])
-    result.extend(r[j:])
+#     result.extend(l[i:])
+#     result.extend(r[j:])
 
-    return result        
-                
+#     return result       
 
+#selection sort
+
+arr= [1,-2, 3, 0, -4, 7, 6, 2, 9]
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i+1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+selection_sort(arr)
+print(arr) 
+
+
+#insertion sort
 
